@@ -34,6 +34,10 @@ app.get('/collections/:id/photos/:page', (req, res) => {
   const fetchUrl = `${url}/collections/${req.params.id}/photos?page=${req.params.page}&per_page=30&client_id=${API_KEY}`;
   sendResponse(res, fetchUrl);
 });
+app.get('/collections/:id/related', (req, res) => {
+  const fetchUrl = `${url}/collections/${req.params.id}/related?client_id=${API_KEY}`;
+  sendResponse(res, fetchUrl);
+});
 app.get('/search/photos/:query/:page', (req, res) => {
   const fetchUrl = `${url}/search/photos?query=${req.params.query}&page=${req.params.page}&per_page=30&client_id=${API_KEY}`;
   sendResponse(res, fetchUrl);
